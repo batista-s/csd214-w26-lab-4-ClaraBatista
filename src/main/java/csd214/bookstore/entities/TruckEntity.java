@@ -32,7 +32,7 @@ public class TruckEntity extends VehicleEntity {
     public String toString() {
         return "TruckEntity{" +
                 "towingCapacity=" + towingCapacity +
-                '}';
+                '}' + super.toString();
     }
 
     @Override

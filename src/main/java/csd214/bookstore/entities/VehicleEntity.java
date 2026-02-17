@@ -71,7 +71,7 @@ public class VehicleEntity extends ProductEntity {
                 ", model='" + model + '\'' +
                 ", year=" + year +
                 ", mileage=" + mileage +
-                '}';
+                '}' + super.toString();
     }
 
     @Override
