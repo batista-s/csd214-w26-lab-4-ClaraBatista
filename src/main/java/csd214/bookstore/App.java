@@ -85,6 +85,8 @@ public class App {
         System.out.println("4. Ticket");
         System.out.println("5. Pen");
         System.out.println("6. Notebook");
+        System.out.println("7. Vinyl");
+        System.out.println("8. Digital Music");
         System.out.println("99. Back");
 
         int choice = getIntInput();
@@ -158,6 +160,29 @@ public class App {
                     nEnt.setName(nPojo.getPageCount() + "pg " + nPojo.getBrand() + " Notebook");
                     em.persist(nEnt);
                     break;
+                case 7:
+                    Vinyl vPojo = new Vinyl();
+                    vPojo.initialize(input);
+                    VinylEntity vEnt = new VinylEntity();
+                    vEnt.setTitle(vPojo.getTitle());
+                    vEnt.setArtist(vPojo.getArtist());
+                    vEnt.setGenre(vPojo.getGenre());
+                    vEnt.setYear(vPojo.getYear());
+                    vEnt.setPrice(vPojo.getPrice());
+                    vEnt.setDiscColor(vPojo.getDiscColor());
+                    vEnt.setCopies(vPojo.getCopies());
+                    break;
+                case 8:
+                    DigitalMusic dmPojo = new DigitalMusic();
+                    dmPojo.initialize(input);
+                    DigitalMusicEntity dmEnt = new DigitalMusicEntity();
+                    dmEnt.setTitle(dmPojo.getTitle());
+                    dmEnt.setArtist(dmPojo.getArtist());
+                    dmEnt.setGenre(dmPojo.getGenre());
+                    dmEnt.setYear(dmPojo.getYear());
+                    dmEnt.setPrice(dmPojo.getPrice());
+                    dmEnt.setLink(dmPojo.getLink());
+                    break;
                 default:
                     System.out.println("Invalid type.");
             }
@@ -224,6 +249,29 @@ public class App {
                 pe.setBrand(pojo.getBrand());
                 pe.setPrice(pojo.getPrice());
                 pe.setColor(pojo.getColor());
+            }
+            else if (entity instanceof VinylEntity) {
+                VinylEntity vEnt = (VinylEntity) entity;
+                Vinyl vPojo = new Vinyl(vEnt.getTitle(), vEnt.getArtist(), vEnt.getGenre(),vEnt.getYear(),vEnt.getPrice(),vEnt.getDiscColor(),vEnt.getCopies());
+                vPojo.edit(input);
+                vEnt.setTitle(vPojo.getTitle());
+                vEnt.setArtist(vPojo.getArtist());
+                vEnt.setGenre(vPojo.getGenre());
+                vEnt.setYear(vPojo.getYear());
+                vEnt.setPrice(vPojo.getPrice());
+                vEnt.setDiscColor(vPojo.getDiscColor());
+                vEnt.setCopies(vPojo.getCopies());
+            }
+            else if (entity instanceof DigitalMusicEntity) {
+                DigitalMusicEntity dmEnt = (DigitalMusicEntity) entity;
+                DigitalMusic dmPojo = new DigitalMusic(dmEnt.getTitle(), dmEnt.getArtist(), dmEnt.getGenre(),dmEnt.getYear(),dmEnt.getPrice(),dmEnt.getLink());
+                dmPojo.edit(input);
+                dmEnt.setTitle(dmPojo.getTitle());
+                dmEnt.setArtist(dmPojo.getArtist());
+                dmEnt.setGenre(dmPojo.getGenre());
+                dmEnt.setYear(dmPojo.getYear());
+                dmEnt.setPrice(dmPojo.getPrice());
+                dmEnt.setLink(dmPojo.getLink());
             }
             // ... (Other types would follow similar pattern) ...
             else {
