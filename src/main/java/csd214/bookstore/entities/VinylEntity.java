@@ -18,8 +18,8 @@ public class VinylEntity extends MusicCollectionEntity {
     public VinylEntity() {
     }
 
-    public VinylEntity(String name, double price, String title, String artist, String genre, int year, String productId, double price1, String name1, String discColor, int copies) {
-        super(name, price, title, artist, genre, year, productId, price1, name1);
+    public VinylEntity(String productId, String name, double price, String title, String artist, String genre, int year, String discColor, int copies) {
+        super(name, price, title, artist, genre, year, productId);
         this.discColor = discColor;
         this.copies = copies;
     }

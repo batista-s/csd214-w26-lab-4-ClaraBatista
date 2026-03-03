@@ -31,15 +31,13 @@ public class MusicCollectionEntity extends ProductEntity {
     public MusicCollectionEntity() {
     }
 
-    public MusicCollectionEntity(String name, double price, String title, String artist, String genre, int year, String productId, double price1, String name1) {
+    public MusicCollectionEntity(String name, double price, String title, String artist, String genre, int year, String productId) {
         super(name, price);
         this.title = title;
         this.artist = artist;
         this.genre = genre;
         this.year = year;
         this.productId = productId;
-        this.price = price1;
-        this.name = name1;
     }
 
     public String getTitle() {
