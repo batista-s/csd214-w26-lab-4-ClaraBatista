@@ -15,8 +15,8 @@ public class DigitalMusicEntity extends MusicCollectionEntity {
     public DigitalMusicEntity() {
     }
 
-    public DigitalMusicEntity(String name, double price, String title, String artist, String genre, int year, String productId, double price1, String name1, String link) {
-        super(name, price, title, artist, genre, year, productId, price1, name1);
+    public DigitalMusicEntity(String productId, String name, double price, String title, String artist, String genre, int year, String link) {
+        super(name, price, title, artist, genre, year, productId);
         this.link = link;
     }
 
