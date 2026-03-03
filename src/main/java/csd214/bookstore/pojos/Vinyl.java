@@ -14,7 +14,7 @@ public class Vinyl extends MusicCollection{
     public Vinyl() {}
 
     public Vinyl(String title, String artist, String genre, int year, double price, String discColor, int copies) {
-        super(title, artist, genre, year, price);
+        super(title, artist, genre, year, price, "VINYL");
         this.discColor = discColor;
         this.copies = copies;
     }

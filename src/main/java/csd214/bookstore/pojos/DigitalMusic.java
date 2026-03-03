@@ -15,7 +15,7 @@ public class DigitalMusic extends MusicCollection{
     }
 
     public DigitalMusic(String title, String artist, String genre, int year, double price, String link) {
-        super(title, artist, genre, year, price);
+        super(title, artist, genre, year, price, "DIGITAL MUSIC");
         this.link = link;
     }
 

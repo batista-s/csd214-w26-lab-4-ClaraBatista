@@ -18,8 +18,8 @@ public abstract class MusicCollection extends Product {
     public MusicCollection() {
     }
 
-    public MusicCollection(String title, String artist, String genre, int year, double price) {
-        super(UUID.randomUUID().toString(), "publication",price);
+    public MusicCollection(String title, String artist, String genre, int year, double price, String name) {
+        super(UUID.randomUUID().toString(), name,price);
         this.title = title;
         this.artist = artist;
         this.genre = genre;
