@@ -18,8 +18,8 @@ public class VinylEntity extends MusicCollectionEntity {
     public VinylEntity() {
     }
 
-    public VinylEntity(String productId, String name, double price, String title, String artist, String genre, int year, String discColor, int copies) {
-        super(name, price, title, artist, genre, year, productId);
+    public VinylEntity(double price, String title, String artist, String genre, int year, String discColor, int copies, String name) {
+        super(name, price, title, artist, genre, year);
         this.discColor = discColor;
         this.copies = copies;
     }
@@ -52,7 +52,7 @@ public class VinylEntity extends MusicCollectionEntity {
     public boolean equals(Object o) {
         if (!(o instanceof VinylEntity that)) return false;
         if (!super.equals(o)) return false;
-        return copies == that.copies && Objects.equals(discColor, that.discColor) && super.equals(o);
+        return copies == that.copies && Objects.equals(discColor, that.discColor);
     }
 
     @Override

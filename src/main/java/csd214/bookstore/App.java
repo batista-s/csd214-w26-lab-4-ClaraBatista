@@ -171,6 +171,8 @@ public class App {
                     vEnt.setPrice(vPojo.getPrice());
                     vEnt.setDiscColor(vPojo.getDiscColor());
                     vEnt.setCopies(vPojo.getCopies());
+                    vEnt.setName("Vinyl: " + vPojo.getTitle());
+                    em.persist(vEnt);
                     break;
                 case 8:
                     DigitalMusic dmPojo = new DigitalMusic();
@@ -182,6 +184,8 @@ public class App {
                     dmEnt.setYear(dmPojo.getYear());
                     dmEnt.setPrice(dmPojo.getPrice());
                     dmEnt.setLink(dmPojo.getLink());
+                    dmEnt.setName("Digital Music: " + dmPojo.getTitle());
+                    em.persist(dmEnt);
                     break;
                 default:
                     System.out.println("Invalid type.");

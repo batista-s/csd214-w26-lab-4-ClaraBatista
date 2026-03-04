@@ -20,14 +20,13 @@ public class JpaDigitalMusicApp {
             em.getTransaction().begin();
             // String name, double price, String make, String model, int year, int mileage, double towingCapacity
             DigitalMusicEntity myDigitalMusic = new DigitalMusicEntity(
-                    UUID.randomUUID().toString(),
-                    "DIGITAL MUSIC",
                     53.00,
                     "Back to Black",
                     "Amy Winehouse",
                     "Contemporary R&B",
                     2006,
-                    "local-library.xwz/files/amy-winehouse/keNkPch2S3ThT8Lq");
+                    "local-library.xwz/files/amy-winehouse/keNkPch2S3ThT8Lq",
+                    "Digital Music: Back to Black");
             em.persist(myDigitalMusic); // Tells Hibernate to save the object
             em.getTransaction().commit();
             System.out.println("DigitalMusic saved with Database ID: " + myDigitalMusic.getId());
@@ -51,16 +50,16 @@ public class JpaDigitalMusicApp {
             listDigitalMusics(em, "[Step 4] After Price Update:");
 
             // --- DELETE ---
-            System.out.println("\n[Step 5] Deleting the DigitalMusic...");
-            em.getTransaction().begin();
-
-            DigitalMusicEntity digitalMusicToDelete = em.find(DigitalMusicEntity.class, myDigitalMusic.getId());
-            if (digitalMusicToDelete != null) {
-                em.remove(digitalMusicToDelete); // Tells Hibernate to delete the row
-            }
-
-            em.getTransaction().commit();
-            listDigitalMusics(em, "[Step 6] Final Inventory (should be empty):");
+//            System.out.println("\n[Step 5] Deleting the DigitalMusic...");
+//            em.getTransaction().begin();
+//
+//            DigitalMusicEntity digitalMusicToDelete = em.find(DigitalMusicEntity.class, myDigitalMusic.getId());
+//            if (digitalMusicToDelete != null) {
+//                em.remove(digitalMusicToDelete); // Tells Hibernate to delete the row
+//            }
+//
+//            em.getTransaction().commit();
+//            listDigitalMusics(em, "[Step 6] Final Inventory (should be empty):");
 
         } catch (Exception e) {
             if (em.getTransaction().isActive()) em.getTransaction().rollback();

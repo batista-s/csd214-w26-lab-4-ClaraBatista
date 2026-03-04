@@ -68,10 +68,12 @@ public abstract class MusicCollection extends Product {
         setGenre(getInput(input, this.genre));
         System.out.println("Edit Year [" + this.year + "]:");
         setYear(getInput(input, this.year));
+        super.edit(input);
     }
 
     @Override
     public void initialize(Scanner input) {
+        super.setProductId(UUID.randomUUID().toString());
         System.out.println("Enter Title:");
         setTitle(getInput(input, "Generic"));
         System.out.println("Enter Artist:");
@@ -80,6 +82,7 @@ public abstract class MusicCollection extends Product {
         setGenre(getInput(input, "Generic"));
         System.out.println("Enter Year:");
         setYear(getInput(input, 0));
+        super.initialize(input);
     }
 
     @Override
@@ -102,6 +105,4 @@ public abstract class MusicCollection extends Product {
     public int hashCode() {
         return Objects.hash(title, artist, genre, year);
     }
-
-
 }

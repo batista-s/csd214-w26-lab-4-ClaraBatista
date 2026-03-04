@@ -15,8 +15,8 @@ public class DigitalMusicEntity extends MusicCollectionEntity {
     public DigitalMusicEntity() {
     }
 
-    public DigitalMusicEntity(String productId, String name, double price, String title, String artist, String genre, int year, String link) {
-        super(name, price, title, artist, genre, year, productId);
+    public DigitalMusicEntity(double price, String title, String artist, String genre, int year, String link, String name) {
+        super(name, price, title, artist, genre, year);
         this.link = link;
     }
 
@@ -39,7 +39,7 @@ public class DigitalMusicEntity extends MusicCollectionEntity {
     public boolean equals(Object o) {
         if (!(o instanceof DigitalMusicEntity that)) return false;
         if (!super.equals(o)) return false;
-        return Objects.equals(link, that.link) && super.equals(o);
+        return Objects.equals(link, that.link);
     }
 
     @Override

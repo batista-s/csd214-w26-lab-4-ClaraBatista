@@ -20,15 +20,14 @@ public class JpaVinylApp {
             em.getTransaction().begin();
             // String name, double price, String make, String model, int year, int mileage, double towingCapacity
             VinylEntity myVinyl = new VinylEntity(
-                    UUID.randomUUID().toString(),
-                    "VINYL",
                     67.48,
                     "Clube da Esquina",
                     "Milton Nascimento e Lo Borges",
                     "MPB",
                     1972,
                     "Black",
-                    11);
+                    11,
+                    "Vinyl: Clube da Esquina");
             em.persist(myVinyl); // Tells Hibernate to save the object
             em.getTransaction().commit();
             System.out.println("Vinyl saved with Database ID: " + myVinyl.getId());
@@ -52,16 +51,16 @@ public class JpaVinylApp {
             listVinyls(em, "[Step 4] After Price Update:");
 
             // --- DELETE ---
-            System.out.println("\n[Step 5] Deleting the Vinyl...");
-            em.getTransaction().begin();
-
-            VinylEntity vinylToDelete = em.find(VinylEntity.class, myVinyl.getId());
-            if (vinylToDelete != null) {
-                em.remove(vinylToDelete); // Tells Hibernate to delete the row
-            }
-
-            em.getTransaction().commit();
-            listVinyls(em, "[Step 6] Final Inventory (should be empty):");
+//            System.out.println("\n[Step 5] Deleting the Vinyl...");
+//            em.getTransaction().begin();
+//
+//            VinylEntity vinylToDelete = em.find(VinylEntity.class, myVinyl.getId());
+//            if (vinylToDelete != null) {
+//                em.remove(vinylToDelete); // Tells Hibernate to delete the row
+//            }
+//
+//            em.getTransaction().commit();
+//            listVinyls(em, "[Step 6] Final Inventory (should be empty):");
 
         } catch (Exception e) {
             if (em.getTransaction().isActive()) em.getTransaction().rollback();

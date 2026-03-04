@@ -51,6 +51,7 @@ public class Vinyl extends MusicCollection{
         setDiscColor(getInput(input, "Undefined"));
         System.out.println("Enter Copies:");
         setCopies(getInput(input, 0));
+        super.setName("VINYL");
     }
 
 

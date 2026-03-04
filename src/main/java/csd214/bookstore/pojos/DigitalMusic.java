@@ -39,6 +39,7 @@ public class DigitalMusic extends MusicCollection{
         super.initialize(input);
         System.out.println("Enter Link:");
         setLink(getInput(input, "No link attached"));
+        super.setName("DIGITAL MUSIC");
     }
 
     @Override
